@@ -34,7 +34,11 @@ class TicTacToe
         @board[index] = token
       end
 
-      def position_taken?
-        true unless @board[input_to_index(input)] == "X" || "O"
+      def position_taken?(index)
+        @board[index] != " "
+      end
+
+      def valid_move?(index)
+        index >= 0 && index <= 9 && @board[index] = " "
       end
 end
