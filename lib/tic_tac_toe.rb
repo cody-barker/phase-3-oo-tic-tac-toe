@@ -18,6 +18,23 @@ class TicTacToe
     end
 
     def display_board
-        @board.each {|spot| puts spot}
-    end
+        puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
+        puts "-----------"
+        puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
+        puts "-----------"
+        puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
+      end
+
+      def input_to_index(input)
+       i = input.to_i
+       i - 1
+      end
+
+      def move(index, token="X")
+        @board[index] = token
+      end
+
+      def position_taken?
+        true unless @board[input_to_index(input)] == "X" || "O"
+      end
 end
